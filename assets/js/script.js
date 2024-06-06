@@ -5,6 +5,9 @@ let correctAnswers = 0;
 
 showQuestion();
 
+// Eventos
+document.querySelector('.scoreArea button').addEventListener('click', resetEvent);
+
 // Functions
 
   // função para mostrar a questão 
@@ -74,7 +77,7 @@ function finishQuiz () {
 
     }else if (points >= 70) {
         document.querySelector('.scoreText1').innerHTML = 'Parabéns!'; // alterar text
-        document.querySelector('.scorePct').style.color = '#0D060D';//Alterar color text
+        document.querySelector('.scorePct').style.color = '#23a723';//Alterar color text
     };
 
 
@@ -91,4 +94,14 @@ function finishQuiz () {
     document.querySelector('.progress--bar').style.width = '100%';
 
 
-}
+};
+
+
+                // Reinicar processo
+function resetEvent () {
+    currentQuestion = 0;  // limpar tudo primeiro
+    correctAnswers = 0;
+
+        showQuestion(); // Mostrar as questões
+
+};
